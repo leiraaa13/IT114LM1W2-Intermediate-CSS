@@ -13,23 +13,107 @@
 
 /* Todo 3.0: Create an animation that increases and decreases the scale of the box  */
 .todo-0-container .box{
-    /* Apply animation here */
+    background: powderblue;
+    border: 2px solid #000000;
+    animation: bounce;
+    animation-duration: 3s ;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    }
+
+@keyframes bounce {
+    0% {
+        scale: 70%
+    }
+    25% {
+        scale: 120%
+    }
+    50% {
+        scale: 70%
+    }
+    75% {
+        scale: 120%
+    }
+    100% {
+        scale: 70%
+    }
 }
+
 
 /* Todo 3.1: Create an animation that moves the box left and right.
 Start with using "from" and "to". Now use "0%" and "100%" as your key frames.
 Set more key frames between 0% and 100%. */
 .todo-1-container .box{
-    /* Apply animation here */
+        background: plum;
+        border: 2px solid #000000;
+        animation: move;
+        animation-duration: 2s;
+        animation-iteration-count: infinite
+    }     
+@keyframes move {
+        0% {
+            transform: translateX(0px);
+        }
+        25% {
+            transform: translateX(100px);
+        }
+        50% {
+            transform: translateX(200px);
+        }
+        75% {
+            transform: translateX(100px);
+        }
+        100% {
+            transform: translateX(0px);
+        }
 }
+        
+
 
 /* Todo 3.2: Try the different timing funcitons such as linear, ease-in, ease-in-out, cubic-bezier, and steps*/
 .todo-2-container .box{
-    /* Apply animation here */
+  border: 2px solid #000000;
+  background: lightseagreen;
+  animation-name: grow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
+@keyframes grow {
+    0% {
+      transform: scaleX(1);
+    }
+    25% {
+      background: lightseagreen;
+    }
+    50% {
+      background: hotpink;
+    }
+    75% {
+      background: lavender;
+      transform: scaleX(1.5);
+    }
+    100% {
+      background: peachpuff;
+    }
+  }
+
+
 
 /* Todo 3.3: Create a transition that will raise the button up and will make it cast a shadow when you hover over the button */
 /* bonus: apply the transition on the box shadow with different duration and timing function. This should all be in one line*/
 .todo-3-container button{
-    /* Apply transition here */
+    display: inline-block;
+    background: lightcoral;
+    border-radius: 2px;
+    border: 2px solid #000000;
+    color: #000000;
+    padding: 10px 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
 }
+
+.todo-3-container button:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
